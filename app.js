@@ -55,11 +55,12 @@ async function main() {
   const status = await getSubscriptionStatus();
   statusRef.innerHTML = status;
   const videoStatus = await getVideo(status);
+  videoRef.innerHTML = videoStatus;
   try {
     console.log(videoStatus);
-    videoRef.innerHTML = videoStatus;
   } catch (e) {
     console.log(e);
+    videoRef.innerHTML = e;
   }
 }
 
